@@ -25,7 +25,9 @@
         <h:outputLabel for="ageUnit">AgeUnit</h:outputLabel>
         <h:inputSecret id="ageUnit" value="#{galaxyBean.ageUnit}" required="true"/>
         <br/>
+
         <p:commandButton id="loginButton" value="Register" action="#{galaxyBean.registerGalaxy()}"/>
+        <h:commandButton value="Statistics" action="#{galaxyBean.registeredGalaxyStatistics()}" />
     </p:outputPanel>
 </h:form>
 </body>

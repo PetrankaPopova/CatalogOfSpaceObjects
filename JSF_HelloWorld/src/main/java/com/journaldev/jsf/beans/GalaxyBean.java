@@ -40,7 +40,7 @@ public class GalaxyBean implements Serializable {
 
         return "success"; // Navigation rule to redirect to a success page
     }
-    public String getRegisteredBodiesStatistics() {
+    public String getRegisteredGalaxyStatistics() {
         List<Galaxy> galaxies = galaxyService.getAllGalaxies();
         int totalGalaxies = galaxies.size();
         String statistics = String.format("Total Galaxies: %d", totalGalaxies);
