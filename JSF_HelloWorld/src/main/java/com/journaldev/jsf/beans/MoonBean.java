@@ -36,7 +36,7 @@ public class MoonBean implements Serializable {
     public String getRegisteredMoonStatistics() {
         List<Moon> moons = moonService.getAllMoon();
         int totalMoon = moons.size();
-        String statistics = String.format("Total Moon: %d", totalMoon);
+        String statistics = String.format("Total Moons: %d", totalMoon);
         return statistics;
     }
     public String getName() {

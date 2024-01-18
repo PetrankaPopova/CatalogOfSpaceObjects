@@ -7,6 +7,8 @@ import com.journaldev.service.PlanetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PlanetServiceImpl implements PlanetService {
     private final PlanetRepository planetRepository;
@@ -24,5 +26,10 @@ public class PlanetServiceImpl implements PlanetService {
         planet.setHabitable(habitable);
         planetRepository.save(planet);
 
+    }
+
+    @Override
+    public List<Planet> getAllPlanet() {
+        return this.planetRepository.getAllPlanet();
     }
 }
