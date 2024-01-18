@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+<head>
+    <title>Planet Registration</title>
+</head>
+<body>
+<h:form>
+    <h:outputLabel for="name">Name</h:outputLabel>
+    <h:inputText id="name" value="#{planetBean.name}" required="true" />
+    <br/>
+
+    <h:outputLabel for="planetType">PlanetType</h:outputLabel>
+    <h:inputText id="planetType" value="#{planetBean.type}" required="true" />
+    <br/>
+
+    <h:outputLabel for="habitable">Habitable</h:outputLabel>
+    <h:inputSecret id="habitable" value="#{planetBean.habitable}" required="true" />
+    <br/>
+
+    <br/>
+    <h:commandButton value="Register" action="#{planetBean.registerPlanet()}" />
+    <h:commandButton value="Statistics" action="#{planetBean.registeredPlanetStatistics}" />
+</h:form>
+</body>
+</html>

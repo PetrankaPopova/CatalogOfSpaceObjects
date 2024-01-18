@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<head>
+    <title>Register Galaxy</title>
+</head>
+<body>
+<h:form>
+    <h:outputLabel for="name">Name:</h:outputLabel>
+    <h:inputText id="name" value="#{galaxyBean.name}" required="true" />
+
+    <h:outputLabel for="type">Type:</h:outputLabel>
+    <h:selectOneMenu id="type" value="#{galaxyBean.type}" required="true">
+        <f:selectItem itemValue="ELLIPTICAL" itemLabel="Elliptical" />
+        <f:selectItem itemValue="LENTICULAR" itemLabel="Lenticular" />
+        <f:selectItem itemValue="SPIRAL" itemLabel="Spiral" />
+        <f:selectItem itemValue="IRREGULAR" itemLabel="Irregular" />
+    </h:selectOneMenu>
+
+    <h:outputLabel for="age">Age:</h:outputLabel>
+    <h:inputText id="age" value="#{galaxyBean.age}" required="true" />
+
+    <h:outputLabel for="ageUnit">AgeUnit:</h:outputLabel>
+    <h:selectOneMenu id="ageUnit" value="#{galaxyBean.ageUnit}" required="true">
+        <f:selectItem itemValue="BILLIONS" itemLabel="Billions" />
+        <f:selectItem itemValue="MILLIONS" itemLabel="Millions" />
+    </h:selectOneMenu>
+
+    <h:commandButton value="Register" action="#{galaxyBean.registerGalaxy}" />
+
+    <!-- Add more components or messages for user interaction -->
+
+</h:form>
+</body>
+</html>
