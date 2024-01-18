@@ -4,9 +4,9 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "helloWorld")
+@ManagedBean(name = "welcome")
 @SessionScoped
-public class HelloWorld implements Serializable {
+public class Welcome implements Serializable {
 
 	private static final long serialVersionUID = -6913972022251814607L;
 
