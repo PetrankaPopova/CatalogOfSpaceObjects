@@ -21,7 +21,7 @@
     </navigation-rule>
     <managed-bean>
         <managed-bean-name>galaxyBean</managed-bean-name>
-        <managed-bean-class>com.journaldev.jsf.beans.GalaxyBean</managed-bean-class>
+        <managed-bean-class>com.space.jsf.beans.GalaxyBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 
