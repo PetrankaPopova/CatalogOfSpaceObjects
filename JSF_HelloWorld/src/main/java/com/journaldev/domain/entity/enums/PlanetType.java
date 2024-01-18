@@ -9,5 +9,5 @@ public enum PlanetType {
     PLANETARY,
     SUPER_EARTH,
     SUPER_JUPITER,
-    SUB_EARTH
+    GAS_GIANT, SUB_EARTH
 }
