@@ -1,5 +1,7 @@
 package com.journaldev.jsf.beans;
 
+import com.journaldev.domain.entity.Planet;
+import com.journaldev.domain.entity.Star;
 import com.journaldev.domain.entity.enums.StarClass;
 import com.journaldev.service.StarService;
 
@@ -7,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @ManagedBean(name = "starBean")
 @SessionScoped
@@ -28,6 +31,12 @@ public class StarBean {
        service.registerStar(name, starClass , mass, size, temperature, compatibility);
 
         return "success"; // Navigation rule to redirect to a success page
+    }
+    public String getRegisteredStarStatistics() {
+        List<Star> stars = service.getAllStar();
+        int totalStar = stars.size();
+        String statistics = String.format("Total Stars: %d", totalStar);
+        return statistics;
     }
     public String getName() {
         return name;

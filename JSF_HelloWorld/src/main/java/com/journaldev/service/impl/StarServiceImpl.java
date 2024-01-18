@@ -6,6 +6,8 @@ import com.journaldev.repository.StarRepository;
 import com.journaldev.service.StarService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StarServiceImpl implements StarService {
     private final StarRepository starRepository;
@@ -24,5 +26,10 @@ public class StarServiceImpl implements StarService {
         star.setTemperature(temperature);
         star.setCompatibility(compatibility);
         this.starRepository.save(star);
+    }
+
+    @Override
+    public List<Star> getAllStar() {
+        return this.starRepository.getAllStar();
     }
 }
