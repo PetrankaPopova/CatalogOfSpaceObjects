@@ -4,6 +4,7 @@ CREATE TABLE Galaxies (
     type ENUM('elliptical', 'lenticular', 'spiral', 'irregular') NOT NULL,
     age DOUBLE NOT NULL,
     age_unit CHAR(1) CHECK(age_unit IN ('B', 'M'))
+
 );
 
 CREATE TABLE Stars (
