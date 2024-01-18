@@ -1,15 +1,15 @@
-package com.journaldev.jsf.helloworld;
+package com.journaldev.jsf.beans;
 
 
 
 import com.journaldev.service.MoonService;
 
-import javax.annotation.ManagedBean;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 import java.io.Serializable;
 
-@ManagedBean
+@ManagedBean(name = "moonBean")
 @SessionScoped
 public class MoonBean implements Serializable {
     private String name;
@@ -28,5 +28,13 @@ public class MoonBean implements Serializable {
     public String registerMoon(){
         this.moonService.registerMoon(name);
         return "success";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
