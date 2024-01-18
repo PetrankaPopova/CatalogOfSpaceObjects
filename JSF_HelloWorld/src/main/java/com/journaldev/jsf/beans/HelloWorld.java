@@ -1,4 +1,4 @@
-package com.journaldev.jsf.helloworld;
+package com.journaldev.jsf.beans;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;

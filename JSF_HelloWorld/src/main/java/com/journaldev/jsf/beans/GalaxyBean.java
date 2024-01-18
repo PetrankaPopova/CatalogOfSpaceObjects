@@ -1,4 +1,4 @@
-package com.journaldev.jsf.helloworld;
+package com.journaldev.jsf.beans;
 
 
 import com.journaldev.domain.entity.enums.AgeUnit;
@@ -6,13 +6,14 @@ import com.journaldev.domain.entity.enums.GalaxyType;
 import com.journaldev.service.GalaxyService;
 
 
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import java.io.Serializable;
 
 
 @ManagedBean(name = "galaxyBean")
+@SessionScoped
 public class GalaxyBean implements Serializable {
     private String name;
     private GalaxyType type;
