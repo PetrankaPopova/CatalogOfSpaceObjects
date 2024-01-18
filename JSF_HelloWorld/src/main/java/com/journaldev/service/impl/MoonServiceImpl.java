@@ -27,6 +27,11 @@ public class MoonServiceImpl implements MoonService {
     }
 
     @Override
+    public void registerMoon(Moon moon) {
+        moonRepository.save(moon);
+    }
+
+    @Override
     public List<Moon> getAllMoon() {
         return this.moonRepository.getAllMoon();
     }

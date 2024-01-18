@@ -35,6 +35,11 @@ public class GalaxyServiceImpl implements GalaxyService {
     }
 
     @Override
+    public void registerGalaxy(Galaxy galaxy) {
+        this.galaxyRepository.save(galaxy);
+    }
+
+    @Override
     public List<Galaxy> getAllGalaxies() {
         return this.galaxyRepository.getAllGalaxies();
     }

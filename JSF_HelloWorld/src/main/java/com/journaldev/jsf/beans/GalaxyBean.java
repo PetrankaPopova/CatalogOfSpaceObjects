@@ -7,6 +7,7 @@ import com.journaldev.domain.entity.enums.GalaxyType;
 import com.journaldev.service.GalaxyService;
 
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -45,6 +46,18 @@ public class GalaxyBean implements Serializable {
         int totalGalaxies = galaxies.size();
         String statistics = String.format("Total Galaxies: %d", totalGalaxies);
         return statistics;
+    }
+
+    @PostConstruct
+    public void init() {
+        loadInitialData();
+    }
+
+    private void loadInitialData() {
+        for (int i = 0; i < 100000; i++) {
+            Galaxy galaxy = new Galaxy();
+            galaxyService.registerGalaxy(galaxy);
+        }
     }
 
     public String getName() {

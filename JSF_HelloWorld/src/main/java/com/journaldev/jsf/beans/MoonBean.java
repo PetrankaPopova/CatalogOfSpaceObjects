@@ -6,6 +6,7 @@ import com.journaldev.domain.entity.Galaxy;
 import com.journaldev.domain.entity.Moon;
 import com.journaldev.service.MoonService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
@@ -38,6 +39,18 @@ public class MoonBean implements Serializable {
         int totalMoon = moons.size();
         String statistics = String.format("Total Moons: %d", totalMoon);
         return statistics;
+    }
+    @PostConstruct
+    public void init() {
+        loadInitialData();
+    }
+
+    private void loadInitialData() {
+        for (int i = 0; i < 100000; i++) {
+            Moon moon = new Moon();
+            moonService.registerMoon(moon);
+
+        }
     }
     public String getName() {
         return name;

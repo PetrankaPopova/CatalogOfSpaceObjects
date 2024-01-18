@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface MoonService {
     void registerMoon(String name);
+    void registerMoon(Moon moon);
 
     List<Moon> getAllMoon();
 }
