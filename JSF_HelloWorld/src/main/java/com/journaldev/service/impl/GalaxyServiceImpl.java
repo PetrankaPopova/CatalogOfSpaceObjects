@@ -9,6 +9,8 @@ import com.journaldev.service.GalaxyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GalaxyServiceImpl implements GalaxyService {
     private final GalaxyRepository galaxyRepository;
@@ -30,5 +32,10 @@ public class GalaxyServiceImpl implements GalaxyService {
         galaxyRepository.save(galaxy);
 
 
+    }
+
+    @Override
+    public List<Galaxy> getAllGalaxies() {
+        return this.galaxyRepository.getAllGalaxies();
     }
 }

@@ -5,6 +5,10 @@
               version="2.2">
     <navigation-rule>
         <from-view-id>/galaxy.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/home.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/moon.xhtml</from-view-id>
@@ -15,5 +19,10 @@
     <navigation-rule>
         <from-view-id>/planet.xhtml</from-view-id>
     </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>galaxyBean</managed-bean-name>
+        <managed-bean-class>com.journaldev.jsf.beans.GalaxyBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 
 </faces-config>

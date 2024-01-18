@@ -1,6 +1,7 @@
 package com.journaldev.jsf.beans;
 
 
+import com.journaldev.domain.entity.Galaxy;
 import com.journaldev.domain.entity.enums.AgeUnit;
 import com.journaldev.domain.entity.enums.GalaxyType;
 import com.journaldev.service.GalaxyService;
@@ -11,6 +12,7 @@ import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.io.Serializable;
+import java.util.List;
 
 
 @ManagedBean(name = "galaxyBean")
@@ -37,6 +39,12 @@ public class GalaxyBean implements Serializable {
         galaxyService.registerGalaxy(name, type, age, ageUnit);
 
         return "success"; // Navigation rule to redirect to a success page
+    }
+    public String getRegisteredBodiesStatistics() {
+        List<Galaxy> galaxies = galaxyService.getAllGalaxies();
+        int totalGalaxies = galaxies.size();
+        String statistics = String.format("Total Galaxies: %d", totalGalaxies);
+        return statistics;
     }
 
     public String getName() {

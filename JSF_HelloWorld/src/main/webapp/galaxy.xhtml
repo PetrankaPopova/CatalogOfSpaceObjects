@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -6,30 +5,28 @@
       xmlns:p="http://primefaces.org/ui">
 
 <head>
-    <title>Moon Registration</title>
+    <title>Galaxy Registration</title>
 </head>
 <body>
-<h:form>
-    <p:inputText value="#{loginBean.loginResponse.userEntryPassword}"
-                 id="onetimePassword" type="text" placeholder="#{msg['general.onetime_password']}"
-                 styleClass="Wid80 TexAlCenter Fs18" required="true"
-                 requiredMessage="#{msg['general.password_required']}"/>
-    <h:outputLabel for="name">Name:</h:outputLabel>
-    <h:inputText id="name" value="#{galaxyBean.name}" required="true"/>
-    <br/>
+<h:form id="form" prependId="false">
+    <p:outputPanel>
+        <p:inputText value="#{galaxyBean.name}" id="name" placeholder="Name"/>
+        <h:outputLabel for="name" placeholder="Password">Name</h:outputLabel>
+        <br/>
 
-    <h:outputLabel for="galaxyType">GalaxyType:</h:outputLabel>
-    <h:inputText id="galaxyType" value="#{galaxyBean.type}" required="true"/>
-    <br/>
+        <h:outputLabel for="galaxyType">GalaxyType</h:outputLabel>
+        <h:inputText id="galaxyType" value="#{galaxyBean.type}" required="true"/>
+        <br/>
 
-    <h:outputLabel for="age">Age:</h:outputLabel>
-    <h:inputSecret id="age" value="#{galaxyBean.age}" required="true"/>
-    <br/>
+        <h:outputLabel for="age">Age</h:outputLabel>
+        <h:inputSecret id="age" value="#{galaxyBean.age}" required="true"/>
+        <br/>
 
-    <h:outputLabel for="ageUnit">AgeUnit:</h:outputLabel>
-    <h:inputSecret id="ageUnit" value="#{galaxyBean.ageUnit}" required="true"/>
-    <br/>
-    <p:commandButton value="Register" action="#{galaxyBean.registerGalaxy()}"/>
+        <h:outputLabel for="ageUnit">AgeUnit</h:outputLabel>
+        <h:inputSecret id="ageUnit" value="#{galaxyBean.ageUnit}" required="true"/>
+        <br/>
+        <p:commandButton id="loginButton" value="Register" action="#{galaxyBean.registerGalaxy()}"/>
+    </p:outputPanel>
 </h:form>
 </body>
 </html>
