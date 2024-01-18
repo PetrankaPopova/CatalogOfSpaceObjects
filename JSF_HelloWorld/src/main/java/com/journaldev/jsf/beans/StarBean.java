@@ -5,6 +5,7 @@ import com.journaldev.domain.entity.Star;
 import com.journaldev.domain.entity.enums.StarClass;
 import com.journaldev.service.StarService;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
@@ -37,6 +38,23 @@ public class StarBean {
         int totalStar = stars.size();
         String statistics = String.format("Total Stars: %d", totalStar);
         return statistics;
+    }
+    @PostConstruct
+    public void init() {
+        loadInitialData();
+    }
+
+    private void loadInitialData() {
+        for (int i = 0; i < 100000; i++) {
+            Star star = new Star();
+            star.setName("Luminara Celestialis");
+            star.setStarClass(StarClass.A);
+            star.setMass(255.25);
+            star.setSize(100.0);
+            star.setTemperature(25);
+            star.setCompatibility(true);
+           service.registerStar(star);
+        }
     }
     public String getName() {
         return name;

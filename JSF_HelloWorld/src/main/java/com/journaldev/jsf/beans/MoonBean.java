@@ -48,6 +48,7 @@ public class MoonBean implements Serializable {
     private void loadInitialData() {
         for (int i = 0; i < 100000; i++) {
             Moon moon = new Moon();
+            moon.setName("New Moon");
             moonService.registerMoon(moon);
 
         }

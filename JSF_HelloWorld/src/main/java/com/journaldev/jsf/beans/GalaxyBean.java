@@ -56,6 +56,10 @@ public class GalaxyBean implements Serializable {
     private void loadInitialData() {
         for (int i = 0; i < 100000; i++) {
             Galaxy galaxy = new Galaxy();
+            galaxy.setName("Orion's Dream");
+            galaxy.setAge(102.2);
+            galaxy.setType(GalaxyType.ELLIPTICAL);
+            galaxy.setAgeUnit(AgeUnit.MILLIONS);
             galaxyService.registerGalaxy(galaxy);
         }
     }

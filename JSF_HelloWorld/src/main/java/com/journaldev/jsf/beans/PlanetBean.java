@@ -1,10 +1,14 @@
 package com.journaldev.jsf.beans;
 
+import com.journaldev.domain.entity.Galaxy;
 import com.journaldev.domain.entity.Moon;
 import com.journaldev.domain.entity.Planet;
+import com.journaldev.domain.entity.enums.AgeUnit;
+import com.journaldev.domain.entity.enums.GalaxyType;
 import com.journaldev.domain.entity.enums.PlanetType;
 import com.journaldev.service.PlanetService;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
@@ -27,7 +31,21 @@ public class PlanetBean implements Serializable {
     public String registerPlanet() {
         planetService.registerPlanet(name, type, habitable);
 
-        return "success"; // Navigation rule to redirect to a success page
+        return "success";
+    }
+    @PostConstruct
+    public void init() {
+        loadInitialData();
+    }
+
+    private void loadInitialData() {
+        for (int i = 0; i < 100000; i++) {
+            Planet planet = new Planet();
+            planet.setName("Earth");
+            planet.setType(PlanetType.TERRESTRIAL);
+            planet.setHabitable(true);
+            planetService.registerPlanet(planet);
+        }
     }
 
     public String getRegisteredPlanetStatistics() {

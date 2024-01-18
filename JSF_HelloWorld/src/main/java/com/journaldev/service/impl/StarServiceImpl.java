@@ -1,11 +1,14 @@
 package com.journaldev.service.impl;
 
+import com.journaldev.domain.entity.Planet;
 import com.journaldev.domain.entity.Star;
+import com.journaldev.domain.entity.enums.PlanetType;
 import com.journaldev.domain.entity.enums.StarClass;
 import com.journaldev.repository.StarRepository;
 import com.journaldev.service.StarService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
@@ -28,8 +31,14 @@ public class StarServiceImpl implements StarService {
         this.starRepository.save(star);
     }
 
+
     @Override
     public List<Star> getAllStar() {
         return this.starRepository.getAllStar();
+    }
+
+    @Override
+    public void registerStar(Star star) {
+        this.starRepository.save(star);
     }
 }

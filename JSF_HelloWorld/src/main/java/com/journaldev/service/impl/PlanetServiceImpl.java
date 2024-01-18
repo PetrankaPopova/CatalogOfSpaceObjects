@@ -29,6 +29,11 @@ public class PlanetServiceImpl implements PlanetService {
     }
 
     @Override
+    public void registerPlanet(Planet planet) {
+        this.planetRepository.save(planet);
+    }
+
+    @Override
     public List<Planet> getAllPlanet() {
         return this.planetRepository.getAllPlanet();
     }
