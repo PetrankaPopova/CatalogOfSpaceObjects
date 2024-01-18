@@ -6,6 +6,7 @@ import com.journaldev.service.StarService;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 @ManagedBean(name = "starBean")
 @SessionScoped
@@ -22,7 +23,7 @@ public class StarBean {
 
     public StarBean() {
     }
-
+    @Transactional
     public String registerStar() {
        service.registerStar(name, starClass , mass, size, temperature, compatibility);
 

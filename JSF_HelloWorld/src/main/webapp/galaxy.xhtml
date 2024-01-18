@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
 <head>
     <title>Moon Registration</title>
 </head>
 <body>
 <h:form>
+    <p:inputText value="#{loginBean.loginResponse.userEntryPassword}"
+                 id="onetimePassword" type="text" placeholder="#{msg['general.onetime_password']}"
+                 styleClass="Wid80 TexAlCenter Fs18" required="true"
+                 requiredMessage="#{msg['general.password_required']}"/>
     <h:outputLabel for="name">Name:</h:outputLabel>
-    <h:inputText id="name" value="#{galaxyBean.name}" required="true" />
+    <h:inputText id="name" value="#{galaxyBean.name}" required="true"/>
     <br/>
 
     <h:outputLabel for="galaxyType">GalaxyType:</h:outputLabel>
-    <h:inputText id="galaxyType" value="#{galaxyBean.type}" required="true" />
+    <h:inputText id="galaxyType" value="#{galaxyBean.type}" required="true"/>
     <br/>
 
     <h:outputLabel for="age">Age:</h:outputLabel>
-    <h:inputSecret id="age" value="#{galaxyBean.age}" required="true" />
+    <h:inputSecret id="age" value="#{galaxyBean.age}" required="true"/>
     <br/>
 
     <h:outputLabel for="ageUnit">AgeUnit:</h:outputLabel>
-    <h:inputSecret id="ageUnit" value="#{galaxyBean.ageUnit}" required="true" />
+    <h:inputSecret id="ageUnit" value="#{galaxyBean.ageUnit}" required="true"/>
     <br/>
-    <h:commandButton value="Register" action="#{galaxyBean.registerGalaxy()}" />
+    <p:commandButton value="Register" action="#{galaxyBean.registerGalaxy()}"/>
 </h:form>
 </body>
 </html>

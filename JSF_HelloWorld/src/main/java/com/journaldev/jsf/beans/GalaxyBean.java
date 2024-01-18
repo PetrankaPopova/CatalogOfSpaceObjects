@@ -9,6 +9,7 @@ import com.journaldev.service.GalaxyService;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 
@@ -31,7 +32,7 @@ public class GalaxyBean implements Serializable {
         this.galaxyService = galaxyService;
     }
 
-
+    @Transactional
     public String registerGalaxy() {
         galaxyService.registerGalaxy(name, type, age, ageUnit);
 

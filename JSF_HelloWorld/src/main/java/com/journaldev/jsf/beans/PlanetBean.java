@@ -6,6 +6,7 @@ import com.journaldev.service.PlanetService;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 
 @ManagedBean(name = "planetBean")
@@ -19,6 +20,7 @@ public class PlanetBean implements Serializable {
 
     public PlanetBean() {
     }
+    @Transactional
     public String registerPlanet() {
         planetService.registerPlanet(name, type, habitable);
 
