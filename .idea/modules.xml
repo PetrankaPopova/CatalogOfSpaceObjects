@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JSF_HelloWorld.iml" filepath="$PROJECT_DIR$/.idea/JSF_HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/catalog-of-space-objects-new.iml" filepath="$PROJECT_DIR$/.idea/catalog-of-space-objects-new.iml" />
     </modules>
   </component>
 </project>
