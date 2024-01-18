@@ -16,5 +16,8 @@
     <navigation-rule>
         <from-view-id>/star.xhtml</from-view-id>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/planet.xhtml</from-view-id>
+    </navigation-rule>
 
 </faces-config>
